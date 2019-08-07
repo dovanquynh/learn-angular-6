@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Add User</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+
+
+<nav class="navbar navbar-collapse navbar-light navbar-custom active-nav-bar">
+    <a href="javascript:void(0)" class="navbar-custom-icon">
+        <i class="fas fa-bars"></i>
+    </a>
+    <a routerLink="/users/edit" class="navbar-brand">&nbsp;Edit User</a>
+</nav>
+
+
+<!--Main-->
+
+<div id="main" class="main-active">
+    <div class="container-fluid">
+        <div class="list-main row ">
+            <div class="col-11">
+                <div class="list-main-head text-center">
+                    <a routerLink="/users/list">User list </a>
+                    <a routerLink="/users/edit" class="btn btn-active">Edit user</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="card card-appointment">
+            <div class="card-body">
+                <form [formGroup]="editForm" (ngSubmit)="onSubmit()" >
+                    <div class="form-group row">
+                        <label class="col-xl-2 col-lg-3 col-md-3 col-sm-12 col-xs-12 col-form-label">Username</label>
+                        <div class="col-xl-10 col-lg-9 col-md-9 col-sm-12 col-xs-12">
+                            <input type="text" formControlName="username" name="username" class="form-control" id="username" autocomplete="off" >
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label class="col-xl-2 col-lg-3 col-md-3 col-sm-12 col-sm-12 col-form-label">Password</label>
+                        <div class="col-xl-10 col-lg-9 col-md-9 col-sm-12  col-xs-12">
+                            <input type="password" formControlName="password" name="password" class="form-control" id="password">
+                            <div class="alert alert-danger" *ngIf="editForm.controls.password.errors?.required && editForm.controls.password.touched">Password is required</div>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label class="col-xl-2 col-lg-3 col-md-3 col-sm-12 col-xs-12 col-form-label">Confirm
+                            Password</label>
+                        <div class="col-xl-10 col-lg-9 col-md-9 col-sm-12 col-xs-12">
+                            <input type="password" class="form-control" name="repeatPassword" formControlName="repeatPassword">
+                            <div class="alert alert-danger" *ngIf="editForm.controls.repeatPassword.errors?.required && editForm.controls.repeatPassword.touched">Repeat password is required</div>
+                            <div class="alert alert-danger" *ngIf="editForm.errors?.doesMatchPassword">Password does not match</div>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label class="col-xl-2 col-lg-3 col-md-3 col-sm-12 col-xs-12 col-form-label">First name</label>
+                        <div class="col-xl-10 col-lg-9 col-md-9 col-sm-12 col-xs-12">
+                            <input formControlName="first_name" name="first_name" class="form-control" id="first_name" autocomplete="off" >
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label class="col-xl-2 col-lg-3 col-md-3 col-sm-12 col-xs-12 col-form-label">Last name</label>
+                        <div class="col-xl-10 col-lg-9 col-md-9 col-sm-12 col-xs-12">
+                            <input formControlName="last_name" name="last_name" class="form-control" id="last_name" autocomplete="off">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label class="col-xl-2 col-lg-3 col-md-3 col-sm-12 col-xs-12 col-form-label">Display
+                            name</label>
+                        <div class="col-xl-10 col-lg-9 col-md-9 col-sm-12 col-xs-12">
+                            <input formControlName="display_name" name="display_name" class="form-control" id="display_name" autocomplete="off">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label class="col-xl-2 col-lg-3 col-md-3 col-sm-12 col-xs-12 col-form-label">Email address
+                            1</label>
+                        <div class="col-xl-10 col-lg-9 col-md-9 col-sm-12 col-xs-12">
+                            <input formControlName="email" name="email" class="form-control" id="email" autocomplete="off">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label class="col-xl-2 col-lg-3 col-md-3 col-sm-12 col-xs-12 col-form-label">Email address
+                            2</label>
+                        <div class="col-xl-10 col-lg-9 col-md-9 col-sm-12 col-xs-12">
+                            <input formControlName="email_alt" name="email_alt" class="form-control" id="email_alt" autocomplete="off">
+                        </div>
+                    </div>
+
+                    <div class="form-group row no-margin">
+                        <label class="col-xl-2 col-lg-3 col-md-3 col-sm-12 col-xs-12 ">Camera Display</label>
+                        <div class="col-xl-10 col-lg-9 col-md-9 col-sm-12">
+                            <div class="row">
+                                <div class="col-xl-4 col-sm-12">
+                                    <input type="text" class="form-control" name="camera1">
+                                </div>
+                                <div class="col-xl-4 col-sm-12">
+                                    <input type="text" class="form-control" name="camera2">
+                                </div>
+                                <div class="col-xl-4 col-sm-12">
+                                    <input type="text" class="form-control" name="camera2">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group row">
+                        <label class="col-xl-2 col-lg-3 col-md-3 col-sm-12 col-xs-12">Name</label>
+                        <div class="col-xl-10 col-lg-9 col-md-9 col-sm-12">
+                            <div class="row">
+                                <div class="col-xl-4 col-sm-12">
+                                    <input type="text" class="form-control" name="name1">
+                                </div>
+                                <div class="col-xl-4 col-sm-12">
+                                    <input type="text" class="form-control" name="name2">
+                                </div>
+                                <div class="col-xl-4 col-sm-12">
+                                    <input type="text" class="form-control" name="name3">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="form-group row">
+                        <label class="col-xl-2 col-lg-3 col-md-3 col-sm-12 col-xs-12 col-form-label">Language use in email</label>
+                        <div class="col-xl-2 col-lg-3 col-md-3 col-sm-12 col-xs-12">
+                            <select class="form-control" formControlName="language_use_in_email" id="language_use_in_email">
+                                <option value="en">EN</option>
+                                <option value="ja">JA</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="form-group row">
+                        <label class="col-xl-2 col-lg-3 col-md-3 col-sm-12 col-xs-12 col-form-label">Is Chairman</label>
+                        <div class="col-xl-2 col-lg-3 col-md-3 col-sm-12 col-xs-12">
+                            <select class="form-control" formControlName="is_chairman" id="is_chairman">
+                                <option value="0">No</option>
+                                <option value="1">Yes</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="form-group row">
+                        <label class="col-xl-2 col-lg-3 col-md-3 col-sm-12 col-xs-12 col-form-label">Is Admin</label>
+                        <div class="col-xl-2 col-lg-3 col-md-3 col-sm-12 col-xs-12">
+                            <select class="form-control" formControlName="is_admin" id="is_admin">
+                                <option value="0">No</option>
+                                <option value="1">Yes</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="form-group row">
+                        <label class="col-xl-2 col-lg-3 col-md-3 col-sm-12 col-xs-12 col-form-label">Status</label>
+                        <div class="col-xl-2 col-lg-3 col-md-3 col-sm-12 col-xs-12">
+                            <select class="form-control" formControlName="status" id="status">
+                                <option value="0">No</option>
+                                <option value="1">Yes</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <!--<div class="form-group row form-btn">-->
+                        <!--<div class="col-sm-3">-->
+                            <button class="btn btn-save" >Save</button>
+                        <!--</div>-->
+                    <!--</div>-->
+                </form>
+            </div>
+        </div>
+
+
+
+
+    </div>
+</div>
+
+<!--End-main-->
+
+
+
+</body>
+</html>

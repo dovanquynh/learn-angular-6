@@ -1,0 +1,611 @@
+/* angular-cli file: src/styles.css */
+@import "../node_modules/angular-calendar/css/angular-calendar.css";
+@import "~ng-pick-datetime/assets/style/picker.min.css";
+
+body {
+  background: url("/assets/images/mian-bg2.gif");
+  font-weight: normal;
+  font-size: 15px;
+}
+button, input, optgroup, select, textarea{
+  line-height: 1.5!important;
+}
+#main {
+  padding-top: 60px;
+  padding-bottom: 60px;
+  transition: 0.5s;
+}
+
+//Appointment
+.basic-container {
+  padding: 30px;
+}
+
+.version-info {
+  font-size: 8pt;
+  float: right;
+}
+
+/*Toggle button*/
+.main-active {
+  margin-left: 208px;
+  transition: 0.5s;
+}
+
+.main-padding {
+  padding-left: 60px;
+  /*padding-top: 120px!important;*/
+}
+
+.active-nav-bar {
+  margin-left: 208px;
+  transition: 0.5s;
+}
+
+.no-active-side-bar {
+  transition: 0.5s;
+  transform: translateX(-100%);
+}
+
+/*Navbar*/
+
+.navbar-custom {
+  background: #DFDFDF;
+  height: 40px;
+  display: block;
+  float: left;
+  position: fixed;
+  width: 100%;
+  z-index: 1001;
+  transition: 0.5s;
+}
+
+.navbar-custom button {
+  /*border-color: rgb(216, 216, 216) rgb(209, 209, 209) rgb(186, 186, 186);*/
+  /*border-style: solid;*/
+  /*border-width: 1px;*/
+  /*padding: 1px 7px 2px;*/
+  /*border: none;*/
+  /*padding: 0;*/
+}
+
+.navbar-toggler-custom {
+  padding: 0;
+}
+
+.navbar-custom a.navbar-brand {
+  color: #b40404;
+  vertical-align: middle;
+  font-size: 15px;
+}
+
+.navbar-custom a.navbar-brand:hover {
+  color: #b40404;
+}
+
+a.navbar-custom-icon {
+  color: #727272;
+  text-decoration: none;
+}
+
+.toggler-icon-custom {
+  color: #ff9600;
+}
+
+/*End-navbar*/
+
+/*Side-bar*/
+.sidebar {
+  height: 100%;
+  width: 208px;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  right: auto;
+  background-color: #000000;
+  overflow-y: hidden;
+  transition: 0.5s;
+}
+
+.sidebar-login {
+  margin-top: -4px;
+}
+
+.sidebar-language {
+  padding-top: 15px;
+}
+
+.sidebar-language a {
+  color: #00B481;
+  text-decoration: none;
+}
+
+.sidebar-list {
+  margin: 0 auto;
+}
+
+ul.menu li a {
+  background: url("assets/images/css-sprite-combined.png.png") no-repeat;
+  display: inline-block;
+  width: 208px;
+  height: 63px;
+  text-align: center;
+}
+
+ul.menu li.css-sprite-schedule a {
+  background-position: 50% 0;
+}
+
+ul.menu li.css-sprite-schedule a:hover {
+  background-position: 50% -63px;
+}
+
+ul.menu li.css-sprite-reserve a {
+  background-position: 50% -126px;
+}
+
+ul.menu li.css-sprite-reserve a:hover {
+  background-position: 50% -189px;
+}
+
+ul.menu li.css-sprite-setup a {
+  background-position: 50% -252px;
+}
+
+ul.menu li.css-sprite-setup a:hover {
+  background-position: 50% -315px;
+}
+
+ul.menu li.css-sprite-room a {
+  background-position: 50% -378px;
+}
+
+ul.menu li.css-sprite-room a:hover {
+  background-position: 50% -441px;
+}
+
+ul.menu li.css-sprite-manual a {
+  background-position: 50% -504px;
+}
+
+ul.menu li.css-sprite-manual a:hover {
+  background-position: 50% -568px;
+}
+
+ul.menu li.css-sprite-top a {
+  background-position: 50% -632px;
+  margin-top: 50px;
+}
+
+ul.menu li.css-sprite-top a:hover {
+  background-position: 50% -696px;
+}
+
+ul.menu li.css-sprite-logout a {
+  background-position: 50% -760px;
+}
+
+ul.menu li.css-sprite-logout a:hover {
+  background-position: 50% -823px;
+}
+
+/*End-side-bar*/
+
+/*Form-login*/
+.login {
+  color: #ffffff;
+  font-weight: normal;
+  margin: 15% auto;
+  max-width: 500px;
+  background: #2A2A2A;
+  border-radius: 5px;
+}
+
+.login-header {
+  background: #3C3C3C;
+  height: 40px;
+  border-radius: 5px 5px 0 0;
+  padding-left: 5%;
+}
+
+.login-header h3,
+.login-form h3 {
+  line-height: 40px;
+  font-size: 20px;
+}
+
+.login-form {
+  margin-left: 5%;
+}
+
+.login-form button {
+  margin: 20px 0 30px 0;
+}
+
+.login-input {
+  max-width: 450px;
+  width: 95%;
+  border-radius: 4px;
+  line-height: 30px;
+  border: 1px solid #f2f2f2;
+  outline: none;
+  padding-left: 10px;
+}
+
+.login-btn {
+  color: #ffffff;
+  height: 40px;
+  width: 100px;
+  border-radius: 4px;
+  border: 1px solid #305074;
+  background: #305074;
+}
+
+#username-error,
+#password-error {
+  color: red;
+}
+
+#message {
+  margin: 0 auto;
+}
+
+/*End-form-login*/
+
+/*Page-404*/
+.error h1 {
+  color: #ffffff;
+  padding: 150px 0 30px 0;
+  font-size: 70px;
+}
+
+.error a {
+  color: #00A274;
+}
+
+.error a:hover {
+  text-decoration: none;
+}
+
+/*End-page-404*/
+
+/*Welcome*/
+.welcome {
+  color: #ffffff;
+  padding-top: 50px;
+}
+
+.welcome h1 {
+  font-size: 60px;
+  font-weight: 400;
+}
+
+/*End-welcome*/
+
+/*List-menu*/
+
+.list-menu a {
+  color: #ffffff;
+}
+
+.card-style {
+  background: #2A2A2A;
+}
+
+.card-row-one {
+  margin-top: 50px;
+}
+
+.card-row-two {
+  margin-top: 30px;
+}
+
+.card-body-custom {
+  padding: 50px 0;
+}
+
+.list-menu i {
+  font-size: 7rem;
+}
+
+/*End-list-menu*/
+
+/*Appointment*/
+
+.card-calendar .owl-dt-container{
+  background-color: #1F1F1F;
+}
+.card-calendar .owl-dt-calendar-control,
+.card-calendar .owl-dt-calendar-table .owl-dt-calendar-header,
+.card-calendar .owl-dt-calendar-table .owl-dt-calendar-cell{
+  color: #ffffff;
+}
+
+.card-calendar .owl-dt-inline-container,
+.card-calendar .owl-dt-popup-container {
+  width: 136%;
+}
+.room {
+  background: #1F1F1F;
+  color: #ffffff;
+  margin-top: 20px;
+}
+
+.room-card {
+  border: none;
+}
+
+.room-card-header {
+  background: #3B3B3B;
+}
+
+.room-card-body {
+  background: #1F1F1F;
+}
+
+.calendar-detail {
+  background: #1F1F1F;
+  padding: 10px;
+}
+
+.calendar-detail h2 {
+  font-size: 30px;
+  color: #ffffff;
+}
+
+.calendar-detail-head {
+  margin-bottom: 20px;
+}
+
+.calendar-detail-content {
+  border: 2px solid #ffffff;
+}
+
+.table-calendar {
+  color: #ffffff;
+}
+
+.table-calendar thead th {
+  border-bottom: none !important;
+}
+
+.table-calendar td, .table-calendar th {
+  border-top: 1px solid #959a9e;
+}
+
+.w-15 {
+  width: 15%;
+}
+
+.w-70 {
+  width: 70%;
+}
+
+.calendar-icon {
+  font-size: 10px;
+}
+
+.card-appointment {
+  background: #1F1F1F;
+  color: #ffffff;
+  width: 70%;
+}
+
+.card-create-appointment {
+  background: #1F1F1F;
+  color: #ffffff;
+  width: 85%;
+}
+
+.mode-btn {
+  background: #2A2A2A;
+  border-color: #2A2A2A;
+  border-radius: 5px;
+  color: #ffffff;
+  width: 100%;
+  padding: 10px;
+}
+
+.style-div-icon {
+  background: #3C3C3C;
+  border-color: #3C3C3C;
+  color: #ffffff;
+}
+
+.form-btn {
+  float: right;
+}
+
+.btn-save {
+  background: #00B481;
+  color: #ffffff;
+}
+
+/*End-appointment*/
+
+/*Page-user*/
+.list-main {
+  margin: 20px;
+}
+
+.list-main-head {
+  margin: 20px auto;
+  text-align: center;
+}
+
+.list-main-edit-user {
+  margin-right: 30%;
+  line-height: 4;
+}
+
+.list-main a,
+.list-main-edit-user a {
+  color: #ffffff;
+  padding: 10px 30px;
+  line-height: 1.5;
+}
+
+.list-main a:hover,
+.list-main-edit-user a:hover {
+  text-decoration: none;
+}
+
+.confirm-btn {
+  padding: 5px 2px;
+  border-radius: 5px;
+}
+
+.btn-active {
+  background: #305074;
+  color: #ffffff;
+  //padding: 10px 30px;
+}
+
+.input-set-order {
+  width: 70px;
+  height: 30px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+  border-color: #ffffff;
+}
+
+.box-action-edit {
+  width: 25px;
+  height: 25px;
+  background: #3C3C3C;
+  float: left;
+  margin: auto;
+}
+
+.box-action-del {
+  width: 25px;
+  height: 25px;
+  background: #3C3C3C;
+  float: right;
+}
+
+.no-margin {
+  margin-bottom: 0.1rem;
+}
+
+/*End-page-user*/
+
+/*Set-up*/
+.set-up {
+  background: url("assets/images/login-bg.gif") no-repeat;
+  width: 100%;
+  background-size: contain;
+  margin: 50px;
+}
+
+.set-up img {
+  margin-bottom: 10px;
+  padding: 5px;
+  max-width: 100%;
+  height: auto;
+}
+
+/*End-set-up*/
+
+@media screen and (max-width: 1200px) {
+  .calendar-detail {
+    margin: 20px;
+  }
+  .card-appointment {
+    width: 90%;
+  }
+}
+
+@media only screen and (max-width: 992px) {
+  /*List-menu*/
+  .list-menu i {
+    font-size: 5rem;
+  }
+  /*End-list-menu*/
+  .card-appointment {
+    width: 100%;
+  }
+
+}
+
+@media only screen and (max-width: 768px) {
+  /*List-menu*/
+  .list-menu i {
+    font-size: 4rem;
+  }
+  .card-row-two {
+    margin-top: 20px;
+
+  }
+  /*End-list-menu*/
+
+  /*Appointment*/
+  .mode-btn,
+  .mode-radio {
+    margin-top: 5px;
+  }
+  /*End-appointment*/
+  .card-appointment {
+    width: 100%;
+  }
+
+}
+
+@media only screen and (max-width: 576px) {
+  /*List-menu*/
+  .welcome h1 {
+    font-size: 30px;
+  }
+  .list-menu i {
+    font-size: 3rem;
+  }
+  .card-row-two {
+    margin-top: 5px;
+    margin-bottom: 20px;
+  }
+  .card-body-custom {
+    padding: 20px 0;
+  }
+  /*End-list-menu*/
+
+  .mode-btn,
+  .mode-radio {
+    margin-top: 5px;
+  }
+  /*End-create-appointment*/
+
+  .card-appointment {
+    width: 100%;
+  }
+}
+
+.my-pagination {
+  background: #ffffff;
+  width: 400px;
+  margin: auto;
+}
+
+/* You can add global styles to this file, and also import other style files */
+
+//FullCalendar
+.fc-unthemed th, .fc-unthemed td, .fc-unthemed thead, .fc-unthemed tbody, .fc-unthemed .fc-divider, .fc-unthemed .fc-row, .fc-unthemed .fc-content, .fc-unthemed .fc-popover, .fc-unthemed .fc-list-view, .fc-unthemed .fc-list-heading td {
+  color: #ffffff;
+}
+
+.fc-unthemed td.fc-today {
+  background: #3498db;
+}
+
+.fc-unthemed .fc-divider, .fc-unthemed .fc-popover .fc-header, .fc-unthemed .fc-list-heading td {
+  background: none;
+}
+
+//.owl-dt-container-row:last-child {
+//  display: none;
+//}
+.owl-dt-inline-container .owl-dt-calendar, .owl-dt-popup-container .owl-dt-calendar {
+  height: 25em;
+}
+

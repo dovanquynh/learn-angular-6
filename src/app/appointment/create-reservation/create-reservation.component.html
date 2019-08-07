@@ -1,0 +1,122 @@
+<nav class="navbar navbar-collapse navbar-light navbar-custom active-nav-bar">
+    <a href="javascript:void(0)" class="navbar-custom-icon">
+        <i class="fas fa-bars"></i>
+    </a>
+    <a href="#" class="navbar-brand">&nbsp;Book a room</a>
+</nav>
+
+<div class="container-fluid">
+    <div id="main" class="main-active">
+        <div class="card card-create-appointment">
+            <div class="card-body">
+                <form [formGroup]="formGroup" (ngSubmit)="onSubmit()" novalidate>
+                    <div class="form-group row">
+                        <label class="col-xl-2 col-lg-2 col-md-12 col-sm-12 col-xs-12 col-form-label">Conference Room</label>
+                        <div class="col-xl-10 col-lg-10 col-md-12 col-sm-12 col-xs-12">
+                            <select name="rooms" id="rooms" class="form-control" formControlName="rooms">
+                                <option *ngFor="let room of rooms" [value]="room">{{ room }}</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label class="col-xl-2 col-lg-2 col-md-12 col-sm-12 col-sm-12 col-form-label">Meeting Name</label>
+                        <div class="col-xl-10 col-lg-10 col-md-12 col-sm-12  col-xs-12">
+                            <input type="text" class="form-control" name="meeting" formControlName="meeting">
+                        </div>
+                    </div>
+                    <div class="form-group checkbox row">
+                        <label class="col-xl-2 col-lg-2 col-md-12 col-sm-12 col-xs-12 col-form-label">Mode</label>
+                        <div class="col-xl-10 col-lg-10 col-md-12 col-sm-12">
+                            <div class="row">
+                                <div class="col-xl-3 col-lg-5 col-md-5 col-sm-12 col-xs-12" >
+                                    <input type="radio" [value]="0" name="mode" formControlName="mode" >
+                                    <label class="form-check-label mode-radio ">&nbsp;Chairman mode</label>
+                                </div>
+                                <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                                    <input type="radio" [value]="1" name="mode" formControlName="mode" >
+                                    <label class="form-check-label mode-radio ">&nbsp;Simultaneous mode</label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!--<div class="form-group row">-->
+                        <!--<label class="col-xl-2 col-lg-2 col-md-12 col-sm-12 col-xs-12 col-form-label">Call conference </label>-->
+                        <!--<div class="col-xl-10 col-lg-10 col-md-12 col-sm-12">-->
+                            <!--<div class="row">-->
+                                <!--<div class="col-md-4 col-sm-12">-->
+                                    <!--<a href="#">-->
+                                        <!--<button type="button" class="mode-btn">30 minutes from now</button>-->
+                                    <!--</a>-->
+                                <!--</div>-->
+                                <!--<div class="col-md-4 col-sm-12">-->
+                                    <!--<a href="#">-->
+                                        <!--<button type="button" class="mode-btn">1 hour from now</button>-->
+                                    <!--</a>-->
+                                <!--</div>-->
+                                <!--<div class="col-md-4 col-sm-12">-->
+                                    <!--<a href="#">-->
+                                        <!--<button type="button" class="mode-btn">3 hour from now</button>-->
+                                    <!--</a>-->
+                                <!--</div>-->
+                            <!--</div>-->
+                        <!--</div>-->
+                    <!--</div>-->
+                    <div class="form-group row">
+                        <label class="control-label col-xl-2 col-lg-2 col-md-12 col-sm-12 col-xs-12 col-form-label">Start Date</label>
+                        <div class="col-xl-10 col-lg-10 col-md-12 col-sm-12 col-xs-12">
+                            <div class="input-group">
+                                <input [owlDateTimeTrigger]="startDate" [owlDateTime]="startDate" class="form-control" formControlName="startDate">
+                                <owl-date-time #startDate></owl-date-time>
+                                <div class="input-group-prepend">
+                                    <div class="input-group-text style-div-icon" [owlDateTimeTrigger]="startDate"><i class="far fa-calendar-alt"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="form-group row">
+                        <label class="control-label col-xl-2 col-lg-2 col-md-12 col-sm-12 col-xs-12 col-form-label">End Date</label>
+                        <div class="col-xl-10 col-lg-10 col-md-12 col-sm-12 col-xs-12">
+
+                            <div class="input-group">
+                                <input [owlDateTimeTrigger]="endDate" [owlDateTime]="endDate" class="form-control" formControlName="endDate">
+                                <owl-date-time #endDate></owl-date-time>
+                                <div class="input-group-prepend">
+                                    <div class="input-group-text style-div-icon" [owlDateTimeTrigger]="endDate"><i class="far fa-calendar-alt"></i>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label class="col-xl-2 col-lg-2 col-md-12 col-sm-12 col-xs-12 col-form-label col-form-label">Agenda</label>
+                        <div class="col-xl-10 col-lg-10 col-md-12 col-sm-12 col-xs-12">
+                            <input type="text" class="form-control" name="agenda" formControlName="agenda">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label class="col-xl-2 col-lg-2 col-md-12 col-sm-12 col-xs-12 col-form-label col-form-label">Notice</label>
+                        <div class="col-xl-10 col-lg-10 col-md-12col-sm-12 col-xs-12">
+                            <textarea name="notice" id="notice" class="form-control" rows="5" formControlName="notice"></textarea>
+                        </div>
+                    </div>
+                    <div class="form-group row form-btn">
+                        <div class="col-sm-3">
+                            <button type="submit" class="btn btn-save" [disabled]="formGroup.status=='INVALID'">Save</button>
+                        </div>
+                    </div>
+                    <p>Form Value: {{ formGroup.value | json }}</p>
+                </form>
+            </div>
+        </div>
+    </div>
+
+
+</div>
+
+
+<!--End-main-->
+

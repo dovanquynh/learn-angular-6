@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Add User</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+
+
+<nav class="navbar navbar-collapse navbar-light navbar-custom active-nav-bar">
+    <a href="javascript:void(0)" class="navbar-custom-icon">
+        <i class="fas fa-bars"></i>
+    </a>
+    <a routerLink="/users/add" class="navbar-brand">&nbsp;Add User</a>
+</nav>
+
+
+<!--Main-->
+
+<div id="main" class="main-active">
+    <div class="container-fluid">
+        <div class="list-main row ">
+            <div class="col-11">
+                <div class="list-main-head text-center">
+                    <a routerLink="/users/list">User list </a>
+                    <a routerLink="/users/add" class="btn btn-active">Add user</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="card card-appointment">
+            <div class="card-body">
+                <form [formGroup]="userFormGroup" (ngSubmit)="onSubmit()" novalidate>
+                    <div class="form-group row">
+                        <label class="col-xl-2 col-lg-3 col-md-3 col-sm-12 col-xs-12 col-form-label">Username</label>
+                        <div class="col-xl-10 col-lg-9 col-md-9 col-sm-12 col-xs-12">
+                            <input type="text" class="form-control" name="username" formControlName="username">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label class="col-xl-2 col-lg-3 col-md-3 col-sm-12 col-sm-12 col-form-label">Password</label>
+                        <div class="col-xl-10 col-lg-9 col-md-9 col-sm-12  col-xs-12">
+                            <input type="password" class="form-control" name="password" formControlName="password">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label class="col-xl-2 col-lg-3 col-md-3 col-sm-12 col-xs-12 col-form-label">Confirm
+                            Password</label>
+                        <div class="col-xl-10 col-lg-9 col-md-9 col-sm-12 col-xs-12">
+                            <input type="password" class="form-control" name="repeatPassword" formControlName="password">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label class="col-xl-2 col-lg-3 col-md-3 col-sm-12 col-xs-12 col-form-label">First name</label>
+                        <div class="col-xl-10 col-lg-9 col-md-9 col-sm-12 col-xs-12">
+                            <input type="text" class="form-control" formControlName="first_name">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label class="col-xl-2 col-lg-3 col-md-3 col-sm-12 col-xs-12 col-form-label">Last name</label>
+                        <div class="col-xl-10 col-lg-9 col-md-9 col-sm-12 col-xs-12">
+                            <input type="text" class="form-control" formControlName="last_name">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label class="col-xl-2 col-lg-3 col-md-3 col-sm-12 col-xs-12 col-form-label">Display
+                            name</label>
+                        <div class="col-xl-10 col-lg-9 col-md-9 col-sm-12 col-xs-12">
+                            <input type="text" class="form-control" formControlName="display_name">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label class="col-xl-2 col-lg-3 col-md-3 col-sm-12 col-xs-12 col-form-label">Email address
+                            1</label>
+                        <div class="col-xl-10 col-lg-9 col-md-9 col-sm-12 col-xs-12">
+                            <input type="email" class="form-control" formControlName="email">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label class="col-xl-2 col-lg-3 col-md-3 col-sm-12 col-xs-12 col-form-label">Email address
+                            2</label>
+                        <div class="col-xl-10 col-lg-9 col-md-9 col-sm-12 col-xs-12">
+                            <input type="email" class="form-control" formControlName="email_alt">
+                        </div>
+                    </div>
+
+                    <div class="form-group row no-margin">
+                        <label class="col-xl-2 col-lg-3 col-md-3 col-sm-12 col-xs-12 ">Camera Display </label>
+                        <div class="col-xl-10 col-lg-9 col-md-9 col-sm-12">
+                            <div class="row">
+                                <div class="col-xl-4 col-sm-12">
+                                    <input type="text" class="form-control">
+                                </div>
+                                <div class="col-xl-4 col-sm-12">
+                                    <input type="text" class="form-control">
+                                </div>
+                                <div class="col-xl-4 col-sm-12">
+                                    <input type="text" class="form-control">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group row">
+                        <label class="col-xl-2 col-lg-3 col-md-3 col-sm-12 col-xs-12 "> Name </label>
+                        <div class="col-xl-10 col-lg-9 col-md-9 col-sm-12">
+                            <div class="row">
+                                <div class="col-xl-4 col-sm-12">
+                                    <input type="text" class="form-control" >
+                                </div>
+                                <div class="col-xl-4 col-sm-12">
+                                    <input type="text" class="form-control">
+                                </div>
+                                <div class="col-xl-4 col-sm-12">
+                                    <input type="text" class="form-control">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="form-group row">
+                        <label class="col-xl-2 col-lg-3 col-md-3 col-sm-12 col-xs-12 col-form-label">Language use in
+                            email</label>
+                        <div class="col-xl-2 col-lg-3 col-md-3 col-sm-12 col-xs-12">
+                            <select class="form-control" formControlName="language_use_in_email" >
+                                <option *ngFor="let language of languages" [value]="language">{{language}}</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="form-group row">
+                        <label class="col-xl-2 col-lg-3 col-md-3 col-sm-12 col-xs-12 col-form-label">Is Chairman</label>
+                        <div class="col-xl-2 col-lg-3 col-md-3 col-sm-12 col-xs-12">
+                            <select formControlName="is_chairman" class="form-control">
+                                <option [value]="0">No</option>
+                                <option [value]="1">Yes</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="form-group row">
+                        <label class="col-xl-2 col-lg-3 col-md-3 col-sm-12 col-xs-12 col-form-label">Is Admin</label>
+                        <div class="col-xl-2 col-lg-3 col-md-3 col-sm-12 col-xs-12">
+                            <select formControlName="is_admin" class="form-control">
+                                <option [value]="0">No</option>
+                                <option [value]="1">Yes</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="form-group row">
+                        <label class="col-xl-2 col-lg-3 col-md-3 col-sm-12 col-xs-12 col-form-label">Status</label>
+                        <div class="col-xl-2 col-lg-3 col-md-3 col-sm-12 col-xs-12">
+                            <select formControlName="status" class="form-control">
+                                <option [value]="0">No</option>
+                                <option [value]="1">Yes</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <button type="submit" class="btn btn-save" [disabled]="userFormGroup.status=='INVALID'" >Save</button>
+
+                    <p>Form Value: {{ userFormGroup.value | json }}</p>
+                    <p>Form Value: {{ userFormGroup.status | json }}</p>
+                </form>
+            </div>
+        </div>
+
+
+    </div>
+</div>
+
+<!--End-main-->
+
+
+</body>
+</html>

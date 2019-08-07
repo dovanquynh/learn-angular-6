@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Login</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+<div class="container">
+
+  <div class="list-main row text-center">
+    <div id="message"></div>
+  </div>
+  <form id="form-login">
+    <div class="login">
+      <div class="login-header">
+        <h3>Login</h3>
+      </div>
+      <div class="login-form">
+        <h3>Username</h3>
+        <input type="text" class="login-input" name="username" >
+        <span id="username-error"></span>
+        <h3>Password</h3>
+        <input type="password" class="login-input" name="password">
+        <span id="password-error"></span>
+        <button type="button" class="login-btn" id="btn-submit" onclick="login()">
+          <i class="fas fa-sign-in-alt"></i>&nbsp;Login
+        </button>
+        <br>
+      </div>
+    </div>
+  </form>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Set up</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+
+
+    <nav class="navbar navbar-collapse navbar-light navbar-custom active-nav-bar">
+      <a href="javascript:void(0)" class="navbar-custom-icon">
+        <i class="fas fa-bars"></i>
+      </a>
+      <a routerLink="/settings" class="navbar-brand">&nbsp;Setting</a>
+    </nav>
+
+
+  <!--End-sidebar&navbar-->
+
+
+
+  <!--Main-->
+  <div id="main" class="main-active">
+    <div class="set-up">
+      <div style="margin-left: 30px; ">
+        <img src="../../../assets/images/menu_user_add.gif" alt="user-add"><br/>
+        <img src="../../../assets/images/menu_user_add.gif" alt="user-add"><br/>
+        <img src="../../../assets/images/menu_user_add.gif" alt="user-add"><br/>
+        <img src="../../../assets/images/menu_user_add.gif" alt="user-add">
+      </div>
+    </div>
+  </div>
+  <!--End-main-->
+
+
+
+
+<script>
+    $(document).ready(function() {
+        var date_input = $('.datetimepicker'); //our date input has the name "date"
+        date_input.datepicker({
+            format: 'mm/dd/yyyy',
+            todayHighlight: true,
+            autoclose: true,
+        })
+    })
+</script>
+</body>
+</html>

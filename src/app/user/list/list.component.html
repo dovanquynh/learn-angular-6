@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>User List</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+</head>
+<body>
+
+
+<nav class="navbar navbar-collapse navbar-light navbar-custom active-nav-bar">
+    <a href="javascript:void(0)" class="navbar-custom-icon">
+        <i class="fas fa-bars"></i>
+    </a>
+    <a routerLink="/users" class="navbar-brand">&nbsp;User List</a>
+</nav>
+
+<!--Main-->
+<div id="main" class="main-active">
+    <div class="container-fluid">
+        <div class="list-main ">
+            <ngx-spinner
+                    bdColor = "rgba(51, 51, 51, 0.8)"
+                    size = "medium"
+                    color = "#fff"
+                    type = "ball-beat"
+            ></ngx-spinner>
+            <div class="list-main-head text-center">
+                <a routerLink="/users/list" class="btn btn-active">User list </a>
+                <a routerLink="/users/add">Add user</a>
+            </div>
+            <div class="row">
+                <div class="col-12 text-center">
+                    <div class="table-responsive">
+                        <table class="table table-bordered table-sm table-dark">
+                            <thead>
+                            <tr>
+                                <th>Username</th>
+                                <th>Displayname</th>
+                                <th>Email 1</th>
+                                <th>Email 2</th>
+                                <th class="text-center">Is Chairman</th>
+                                <th class="text-center">Is Admin</th>
+                                <th class="text-center">Set order
+                                    <br>
+                                    <button type="button" class="confirm-btn">Confirm</button>
+                                </th>
+                                <th class="text-center">Action</th>
+                            </tr>
+                            </thead>
+                            <tbody id="view_data">
+                            <tr *ngFor="let user of users | paginate: { id: 'listing_pagination',
+                                                      itemsPerPage: 15,
+                                                      currentPage: p,
+                                                      totalItems: totalRec }">
+                                <td>{{ user.username }}</td>
+                                <td style="white-space: nowrap">{{ user.display_name }}</td>
+                                <td>{{ user.email }}</td>
+                                <td>{{ user.email_alt }}</td>
+                                <td>
+                                    <span *ngIf="user.is_chairman === 1;else other">Yes</span>
+                                    <ng-template #other>No</ng-template>
+                                </td>
+                                <td>
+                                    <span *ngIf="user.is_admin === 1;else other">Yes</span>
+                                    <ng-template #other>No</ng-template>
+                                </td>
+                                <td>
+                                    <input type="number" class="input-set-order" name="quantity"
+                                           value="{{ user.order }}">
+                                </td>
+                                <td class="btn-group text-center">
+                                    <a routerLink="/users/edit/{{user.id}}">
+                                        <button class="btn btn-secondary"><i class="fas fa-edit"></i></button>
+                                    </a>
+                                    <a (click)="deleteUser(user)">
+                                        <button class="btn btn-danger"><i class="fas fa-trash-alt"></i></button>
+                                    </a>
+                                </td>
+                            </tr>
+
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="my-pagination">
+                        <pagination-controls id="listing_pagination" maxSize="5" directionLinks="true"
+                                             (pageChange)="p = $event"></pagination-controls>
+                    </div>
+                </div>
+                <!--<div id = "myDiv" class="text-center">-->
+                <!--<img src = "../../../assets/images/ajax-loader.gif">-->
+                <!--</div>-->
+
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--End-main-->
+
+
+</body>
+</html>

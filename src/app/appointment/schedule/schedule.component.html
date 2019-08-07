@@ -1,0 +1,62 @@
+<nav class="navbar navbar-collapse navbar-light navbar-custom active-nav-bar">
+    <a href="javascript:void(0)" class="navbar-custom-icon">
+        <i class="fas fa-bars"></i>
+    </a>
+    <a href="#" class="navbar-brand">&nbsp;Schedule </a>
+</nav>
+
+
+<!--End-sidebar&navbar-->
+
+
+<!--Main-->
+<div class="container-fluid">
+    <div id="main" class="main-active row">
+        <div class="col-xl-2 col-lg-6 col-md-6 col-sm-12 col-xs-12">
+            <div class="card-calendar">
+                <owl-date-time-inline [(ngModel)]="selectedMoment" [pickerType]="'calendar'"></owl-date-time-inline>
+            </div>
+            <div class="room">
+                <div class="card room-card">
+                    <h5 class="card-header room-card-header">Rooms</h5>
+                    <div class="card-body room-card-body">
+                        <div class="form-group">
+                            <input type="checkbox" value="1">
+                            <label>&nbsp;Room 1</label>
+                        </div>
+                        <div class="form-group">
+                            <input type="checkbox" value="2">
+                            <label>&nbsp;Room 2</label>
+                        </div>
+                        <div class="form-group">
+                            <input type="checkbox" value="3">
+                            <label>&nbsp;Room 3</label>
+                        </div>
+                        <div class="form-group">
+                            <input type="checkbox" value="4">
+                            <label>&nbsp;Room 4</label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-xl-10 col-lg-12 col-md-12 col-sm-12 col-xs-12 calendar-detail text-center">
+            <div *ngIf="calendarOptions">
+                <ng-fullcalendar
+                        #ucCalendar [options]="calendarOptions"
+                        (eventClick)="eventClick($event.detail)"
+                        (eventDrop)="updateEvent($event.detail)"
+                        (eventResize)="updateEvent($event.detail)"
+                        (clickButton)="clickButton($event.detail)"
+                        (dayClick)="dayClick($event.detail)"
+                        (select)="select($event.detail)"
+                >
+                </ng-fullcalendar>
+            </div>
+
+
+        </div>
+    </div>
+
+</div>
+<!--End-main-->
